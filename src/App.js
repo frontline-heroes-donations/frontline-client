@@ -33,7 +33,7 @@ const Donations = () => {
   useEffect(() => {
     const fetchData = async () => {
       const responseDonations = await getDonations();
-      console.log(responseDonations);
+      // console.log(responseDonations);
       setDonations(responseDonations);
     };
     fetchData();
@@ -109,10 +109,11 @@ const AnonymousMessage = ({ donation }) => (
 );
 
 const DonationInfo = ({ donation }) => {
-  const date = new Date(donation.createdAt);
-  const timeAgo = moment(date).fromNow();
+  // const date = new Date(donation.createdAt);
+  const timeAgo = moment(donation.createdAt).fromNow();
+  // const timeAgo = moment(date).fromNow();
   return (
-    <div className='info'><span>{donation.createdAt}</span><br/><span>{date.toString()}</span><br/><span>{timeAgo}</span></div>    
+    <div className='info'><span>{timeAgo}</span></div>
   );
 };
 
