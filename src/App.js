@@ -112,7 +112,7 @@ const DonationInfo = ({ donation }) => {
   const date = new Date(donation.createdAt);
   const timeAgo = moment(date).fromNow();
   return (
-    <div className='info'>{timeAgo}</div>
+    <div className='info'>{donation.createdAt},{date},{timeAgo}</div>    
   );
 };
 
